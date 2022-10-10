@@ -1,0 +1,17 @@
+{
+  "name": "com.besthttp.profiler",
+  "displayName": "Best HTTP/2 - Network Profiler",
+  "description": "Custom profiler and profiler module for the Best HTTP/2 Asset Store package (https://assetstore.unity.com/packages/tools/network/best-http-2-155981?aid=1101lfX8E).\n\nTo start profiling call BestHTTP.Profiler.ProfilerUpdater.Attach();",
+  "version": "1.0.0",
+  "unity": "2020.1",
+  "dependencies": {
+    "com.unity.profiling.core": "1.0.2"
+  },
+  "author": {
+    "name": "Tivadar György Nagy",
+    "email": "benedicht@gmail.com",
+    "url": "https://benedicht.github.io/"
+  },
+  "keywords": [ "besthttp", "profiler" ],
+  "license": "MIT"
+}
