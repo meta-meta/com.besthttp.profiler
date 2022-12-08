@@ -2,6 +2,7 @@ using System;
 
 using BestHTTP.Connections;
 using BestHTTP.Extensions;
+using BestHTTP.PlatformSupport.Memory;
 using BestHTTP.Profiler.Network;
 
 namespace BestHTTP.Profiler
@@ -54,7 +55,7 @@ namespace BestHTTP.Profiler
 
                 NetworkStats.SentSinceLastFrame.Value = diff;
                 NetworkStats.SentTotal.Value = newNetworkBytesSent;
-            }            
+            }
 
             // Received
             {
@@ -64,10 +65,18 @@ namespace BestHTTP.Profiler
 
                 NetworkStats.ReceivedSinceLastFrame.Value = diff;
                 NetworkStats.ReceivedTotal.Value = newNetworkBytesReceived;
-            }            
+            }
 
+            // Open/Total connections
             NetworkStats.OpenConnectionsCounter.Value = BufferedReadNetworkStream.OpenConnections;
             NetworkStats.TotalConnectionsCounter.Value = BufferedReadNetworkStream.TotalConnections;
+
+            // Memory stats
+            BufferPool.BufferPoolStats bufferPoolStats = default;
+            BufferPool.GetStatistics(ref bufferPoolStats);
+            MemoryStats.Borrowed.Value = bufferPoolStats.Borrowed;
+            MemoryStats.Pooled.Value = bufferPoolStats.PoolSize;
+            MemoryStats.ArrayAllocations.Value = bufferPoolStats.ArrayAllocations;
         }
     }
 }
