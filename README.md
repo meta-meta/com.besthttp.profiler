@@ -1,6 +1,6 @@
 # Best HTTP/2 Profiler
 
-Get and view internal statistics related to the Best HTTP/2 plugin, integrated into the Unity Profiler window.
+View internal statistics related to the Best HTTP/2 plugin, integrated into the Unity Profiler window.
 
 ## Installation
 
