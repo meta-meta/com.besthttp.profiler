@@ -17,7 +17,7 @@ Steps to install and setup:
 
 	![DataCollector GameObject](Documentation~/images/collector_gameobject.png)
 
-> Note: DataCollector will call [Object.DontDestroyOnLoad](https://docs.unity3d.com/ScriptReference/Object.DontDestroyOnLoad.html) on the GameObject it's placed on!
+> 📝 Note: DataCollector will call [Object.DontDestroyOnLoad](https://docs.unity3d.com/ScriptReference/Object.DontDestroyOnLoad.html) on the GameObject it's placed on!
 
 ## Network Profiler
 
@@ -32,7 +32,7 @@ Collected fields:
 * **Open Connections**: Currently open connections. An open connection might be an idle connection that have no active request/response to process.
 * **Total Connections**: Total connections, including open ones too.
 
-> Note: Communication with a proxy isn't tracked by the Network Profiler until it's connected. This means that while it tries to connect it doesn't show up in `Open Connections` and `Total Connections`, negotiation request and response doesn't registered in `Sent`/`Sent Total`/`Received`/`Received Total`.
+> 📝 Note: Communication with a proxy isn't tracked by the Network Profiler until it's connected. This means that while it tries to connect it doesn't show up in `Open Connections` and `Total Connections`, negotiation request and response doesn't registered in `Sent`/`Sent Total`/`Received`/`Received Total`.
 
 ## Memory Profiler
 
@@ -44,7 +44,7 @@ Collected fields:
 * **Pooled**: Memory in the [BufferPool](https://benedicht.github.io/BestHTTP-Documentation/pages/best_http2/global_topics/BufferPool.html) available to borrow.
 * **Array Allocations**: Total number of `byte[]` allocations through the [BufferPool](https://benedicht.github.io/BestHTTP-Documentation/pages/best_http2/global_topics/BufferPool.html). An allocation occurs when there's no suitable `byte[]` in the pool to borrow. If it's constantly growing, increasing [BufferPool.MaxPoolSize](https://benedicht.github.io/BestHTTP-Documentation/pages/best_http2/global_topics/BufferPool.html#maxpoolsize) might be a good idea.
 
-> Note: In case of errors memory might not be placed back to the pool and will be displayed as borrowed indefinitely. It doesn't mean there's a memory leak, just that it doesn't placed back to the [BufferPool](https://benedicht.github.io/BestHTTP-Documentation/pages/best_http2/global_topics/BufferPool.html).
+> 📝 Note: In case of errors memory might not be placed back to the pool and will be displayed as borrowed indefinitely. It doesn't mean there's a memory leak, just that it doesn't placed back to the [BufferPool](https://benedicht.github.io/BestHTTP-Documentation/pages/best_http2/global_topics/BufferPool.html).
 
 ## Data Collection
 
