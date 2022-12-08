@@ -4,7 +4,9 @@ namespace BestHTTP.Profiler.Network
 {
     public sealed class NetworkStats
     {
-        public static readonly ProfilerCategory Category = new ProfilerCategory("Best HTTP/2 - Network", ProfilerCategoryColor.Scripts);
+        public const string CategoryName = "Best HTTP/2 - Network";
+
+        public static readonly ProfilerCategory Category = new ProfilerCategory(CategoryName, ProfilerCategoryColor.Scripts);
 
         public const string SentSinceLastFrameName = "Sent";
         public static readonly ProfilerCounterValue<long> SentSinceLastFrame = new(Category, SentSinceLastFrameName, ProfilerMarkerDataUnit.Bytes, ProfilerCounterOptions.FlushOnEndOfFrame | ProfilerCounterOptions.ResetToZeroOnFlush);

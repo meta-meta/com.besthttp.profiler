@@ -5,7 +5,7 @@ using BestHTTP.Profiler.Network;
 namespace BestHTTP.Editor.Profiler.Network
 {
     [System.Serializable]
-    [ProfilerModuleMetadata("Best HTTP/2 - Network")]
+    [ProfilerModuleMetadata(NetworkStats.CategoryName)]
     public sealed class NetworkStatsProfilerModule : ProfilerModule
     {
         static readonly ProfilerCounterDescriptor[] k_Counters =

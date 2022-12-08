@@ -4,7 +4,9 @@ namespace BestHTTP.Profiler.Network
 {
     public sealed class MemoryStats
     {
-        public static readonly ProfilerCategory Category = new ProfilerCategory("Best HTTP/2 - Memory", ProfilerCategoryColor.Scripts);
+        public const string CategoryName = "Best HTTP/2 - Memory";
+
+        public static readonly ProfilerCategory Category = new ProfilerCategory(CategoryName, ProfilerCategoryColor.Scripts);
 
         public const string BorrowedName = "Borrowed";
         public static readonly ProfilerCounterValue<long> Borrowed = new(Category, BorrowedName, ProfilerMarkerDataUnit.Bytes, ProfilerCounterOptions.FlushOnEndOfFrame | ProfilerCounterOptions.ResetToZeroOnFlush);
