@@ -21,6 +21,8 @@ namespace BestHTTP.Profiler
         private static long _lastNetworkBytesSent = 0;
         private static long _lastNetworkBytesReceived = 0;
 
+        BufferPool.BufferPoolStats bufferPoolStats = default;
+
         /// <summary>
         /// Call Attach() to start recording profiler values
         /// </summary>
@@ -72,7 +74,6 @@ namespace BestHTTP.Profiler
             NetworkStats.TotalConnectionsCounter.Value = BufferedReadNetworkStream.TotalConnections;
 
             // Memory stats
-            BufferPool.BufferPoolStats bufferPoolStats = default;
             BufferPool.GetStatistics(ref bufferPoolStats);
             MemoryStats.Borrowed.Value = bufferPoolStats.Borrowed;
             MemoryStats.Pooled.Value = bufferPoolStats.PoolSize;
